@@ -15,7 +15,7 @@ public class present {
             numbers[i] *= 2;
         }
 
-        for (int i = numbers.length-1; i >= 0; i--) {
+        for (int i = 0; i >= numbers.length; i--) {
             System.out.println(numbers[i]);
         }
     }
