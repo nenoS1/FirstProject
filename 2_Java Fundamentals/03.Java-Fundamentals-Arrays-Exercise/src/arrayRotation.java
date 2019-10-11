@@ -9,6 +9,10 @@ public class arrayRotation {
             numbers[oppositeindex] = oldnumbersI;
         }
 
+        Print(numbers);
+    }
+
+    private static void Print(int[] numbers) {
         for (int i = 0; i < numbers.length; i++) {
             System.out.println(numbers[i]);
         }
