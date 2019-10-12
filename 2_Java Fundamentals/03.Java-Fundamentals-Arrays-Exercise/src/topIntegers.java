@@ -10,7 +10,19 @@ public class topIntegers {
             result[i]=Integer.parseInt(input[i]);
         }
 
-
-
+        for (int i = 0; i < result.length-1; i++) {
+            boolean isBegger = true;
+            int cuurentnumber = result[i];
+            for (int j = i+1; j < result.length; j++) {
+                int number = result[j];
+                if(cuurentnumber <= number){
+                    isBegger = false;
+                }
+            }
+            if(isBegger){
+                System.out.print(cuurentnumber + " ");
+            }
+        }
+        System.out.println(result[result.length-1]);
     }
 }
