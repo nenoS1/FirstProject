@@ -1,6 +1,6 @@
 public class arrayRotation {
     public static void main(String[] args) {
-        int[] numbers = {12, 14, 16, 20};
+        int[] numbers = {12, 14, 16, 20, 65};
 
         for (int i = 0; i < numbers.length/2 ; i++) {
             int oppositeindex = numbers.length - 1 - i;
