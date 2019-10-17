@@ -4,38 +4,41 @@ public class palindromeIntegers {
 
     //101, 100, 55, 1001, END
 
-    static boolean checkPalindrome(String word){
-        int n = word.length();
-        String[] number = new String[n];
-        number = word.split("");
+    static void checkPalindrom(String arr){
 
-        for (int i = 0; i < n; i++) {
-            String currentstring = number[0];
-            for (int j = 0; j < number.length-1; j++) {
-                number[j] = number[j+1];
-            }
-            number[number.length-1] = currentstring;
+        String str = arr;
+        int length = str.length();
+        String rev = "";
+        for ( int i = length - 1; i >= 0; i-- ) {
+            rev = rev + str.charAt(i);
         }
-        //System.out.println(String.join("", number));
-        String palString = String.join("", number);
 
-        //if(currentString = palString){ return true; }
-        if (word.equals("END")){
-            return false;
-        } else if (word.equals(palString)){
+        if (str.equals(rev))
             System.out.println("true");
-        } else {System.out.println("false");
-        }
+        else
+            System.out.println("false");
 
-        return false;
     }
 
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        String w = scanner.next();
 
 
-        checkPalindrome(scanner.nextLine());
+        while(w != "END"){
+            if(w.equals("END")){
+                break;
+            }
+            checkPalindrom(w);
+            w = scanner.next();
+
+            }
+
+
+        }
+
+
 
     }
-}
+
