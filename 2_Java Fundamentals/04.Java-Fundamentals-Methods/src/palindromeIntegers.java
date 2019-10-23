@@ -32,7 +32,6 @@ public class palindromeIntegers {
             }
             checkPalindrom(w);
             w = scanner.next();
-
             }
 
 

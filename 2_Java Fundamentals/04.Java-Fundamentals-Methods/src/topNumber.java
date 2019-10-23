@@ -2,16 +2,6 @@ import java.util.Scanner;
 
 public class topNumber {
 
-    static void topN(int number){
-
-        for (int i = 0; i < number; i++) {
-            if (check8Divisble(i) && checkOneOdd(i)) {
-                System.out.println(i);
-            }
-        }
-    }
-
-   //1.2.3.4.5.6.7.8.9.10.11.12.13.14.15.16.17....
 
     static boolean check8Divisble(int number){
         int sum = 0;
@@ -31,12 +21,14 @@ public class topNumber {
 
     static boolean checkOneOdd(int number){
         int digit = 0;
-        while (number != 0) {
-            digit = number % 10;
+        while (number > 0) {
+            if ((number % 10) % 2 == 1) {
+                digit++;
+            }
             number /= 10;
         }
 
-        if(digit % 2 != 0){
+        if(digit >= 1){
             return true;
         }
         return false;
@@ -47,7 +39,11 @@ public class topNumber {
         Scanner scanner = new Scanner(System.in);
         int number = Integer.parseInt(scanner.nextLine());
 
-        topN(number);
+        for (int i = 0; i < number; i++) {
+            if (check8Divisble(i) && checkOneOdd(i)) {
+                System.out.println(i);
+            }
+        }
 
     }
 }
