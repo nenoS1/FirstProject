@@ -23,8 +23,15 @@ public class MinerTask {
                 linenumber = linenumber + 1;
         }
 
+
         for (int i = 0; i < evenRes.size(); i++) {
-            counts.put(evenRes.get(i),oddQty.get(i));
+            int quantity = oddQty.get(i);
+            String res = evenRes.get(i);
+            if (counts.containsKey(res)){
+                counts.put(evenRes.get(i),counts.get(res)+quantity);
+            } else {
+                counts.put(evenRes.get(i),oddQty.get(i));
+            }
         }
             for (Map.Entry<String, Integer> stringIntegerEntry : counts.entrySet()) {
                 System.out.printf("%s -> %d%n", stringIntegerEntry.getKey(), stringIntegerEntry.getValue());
