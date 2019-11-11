@@ -7,7 +7,7 @@ public class CountCharsInString {
 
         char[] charcount = scanner.nextLine().toCharArray();
 
-        TreeMap<Character, Integer> counts = new TreeMap<>();
+        Map<Character, Integer> counts = new LinkedHashMap<>();
 
         for (char c : charcount) {
             if (c != ' ') {
